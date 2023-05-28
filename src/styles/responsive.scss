@@ -1,0 +1,131 @@
+.catalog__list {
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+@media screen and (max-width: 499px) {
+    .nav {
+        z-index: 10;
+        background-color: #fff;
+        width: 300px;
+        position: absolute;
+
+        -webkit-transform: translate(-300px, 0);
+        transform: translate(-300px, 0);
+
+        transition: transform 0.3s ease;
+
+        &__item {
+            display: list-item;
+            border-bottom: 1px solid #E0E0E0;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    .hero {
+        background-image:
+            image-set(url('/dist/images/hero-image_4-small.jpg') 499w);
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+@media screen and (min-width: 455px) {
+    .headline__content {
+        padding: 16px 16px;
+    }
+
+    .headline__title {
+        font-size: 28px;
+    }
+
+    .headline__description {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .header__menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .headline__content {
+        margin: 0 auto;
+        max-width: 650px;
+    }
+
+    .catalog__item__content {
+        padding: 16px 32px 32px 32px;
+    }
+
+    .catalog__item__title {
+        font-size: 18px;
+    }
+
+    .catalog__item__description {
+        font-size: 14px;
+    }
+
+    .catalog__item__rating {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .catalog__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav__list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        background-image:
+            image-set(url('/dist/images/hero-image_4-large.jpg') 800w);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .headline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &__content {
+            padding: 16px 32px;
+        }
+    }
+
+    .catalog__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+    }
+
+    .hero {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .hero {
+        width: 1000px;
+    }
+}
