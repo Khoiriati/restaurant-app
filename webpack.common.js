@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prefer-regex-literals */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
@@ -26,6 +28,7 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: { url: false },
           },
         ],
       },
@@ -64,12 +67,32 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/**'],
+          },
         },
       ],
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
+        skipWaiting: true,
+        clientsClaim: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('^https://restaurant-api.dicoding.dev/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'new Date().toISOString()',
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+      ],
     }),
   ],
 };

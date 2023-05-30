@@ -101,7 +101,7 @@ body {
   height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("../public/images/heros/hero-image_4.jpg");
+  background-image: url("/images/hero-image_4-default.webp");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -139,6 +139,7 @@ main {
 }
 .headline__figure img {
   width: 100%;
+  height: auto;
 }
 .headline__figure figcaption {
   text-align: center;
