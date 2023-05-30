@@ -20,7 +20,7 @@
     text-align: left;
   }
   .hero {
-    background-image: url("/dist/images/hero-image_4-small.webp");
+    background-image: url("/images/hero-image_4-small.webp");
   }
   .open {
     -webkit-transform: translate(0, 0);
@@ -75,7 +75,7 @@
     margin: 0 auto;
   }
   .hero {
-    background-image: url("/dist/images/hero-image_4-large.webp");
+    background-image: url("/images/hero-image_4-large.webp");
   }
 }
 @media screen and (min-width: 900px) {
